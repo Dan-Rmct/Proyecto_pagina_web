@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro"
+import CardEquipo from "../components/CardEquipo.astro"
+---
+
+<Layout title="Conócenos">
+  <section id="seccion-equipo" class="py-20 bg-[#020617]">
+    <div class="container mx-auto px-4">
+      
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">Conoce a nuestro equipo</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          El Club establece una mesa directiva conformada por cuatro representantes cuyo cargo responde a necesidades 
+          específicas de coordinación, ejecución y planeación estratégica, asegurando el correcto desarrollo de las actividades,
+          la transparencia en la gestión y la continuidad institucional del proyecto.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <CardEquipo 
+          nombre="Ana Guadalupe Martinez Colón"
+          cargo="Presidenta"
+          foto="/public/imagenes/equipo/Presidenta.jpg"
+          linkedin="https://www.linkedin.com/..."
+          github="https://github.com/maria"
+          email="maria@ejemplo.com"
+          colorBorde="border-blue-500"
+        />
+
+        <CardEquipo 
+          nombre="Jesús Sebastián Vázquez Zarco"
+          cargo="Vice-Presidente"
+          foto="/public/imagenes/equipo/Vicepresidente.jpg"
+          linkedin="https://www.linkedin.com/..."
+          github="https://github.com/itsebasvz"
+          email="carlos@ejemplo.com"
+          colorBorde="border-purple-500"
+        />
+
+        <CardEquipo 
+          nombre="Enrique Emiliano Cano García"
+          cargo="Secretario Técnico"
+          foto="/public/imagenes/equipo/SecretarioTecnico.jpg"
+          linkedin="http://www.linkedin.com/in/enrique-cano-garc%C3%ADa-2a3012227?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+          github="https://github.com/kno4"
+          email="carlos@ejemplo.com"
+          colorBorde="border-blue-500"
+        />
+
+        <CardEquipo 
+          nombre="Eric Leonardo Rosales Sánchez"
+          cargo="Director de Estrategia y Planeación"
+          foto="/public/imagenes/Vicepresidente.jpg"
+          linkedin="https://www.linkedin.com/..."
+          github="https://github.com/itsebasvz"
+          email="carlos@ejemplo.com"
+          colorBorde="border-purple-500"
+        />
+
+      </div>
+    </div>
+  </section>
+</Layout>

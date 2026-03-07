@@ -1,0 +1,78 @@
+---
+import Layout from "../layouts/Layout.astro"
+---
+
+<Layout title="Registro - Únete ahora">
+  <section class="min-h-screen pt-32 pb-20 bg-[#020617] flex items-center justify-center px-4">
+    <div class="max-w-3xl w-full bg-[#111827]/50 border border-gray-800 p-8 md:p-12 rounded-3xl shadow-2xl backdrop-blur-sm">
+      
+      <div class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Formulario de Registro</h1>
+        <p class="text-gray-400">Completa tus datos para formar parte nuestra comunidad</p>
+      </div>
+
+      <form action="#" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <div class="flex flex-col gap-2">
+          <label class="text-sm font-medium text-blue-400 ml-1">Nombre(s)</label>
+          <input type="text" name="nombres" required class="bg-[#0a0f1a] border border-gray-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all" >
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label class="text-sm font-medium text-blue-400 ml-1">Apellidos</label>
+          <input type="text" name="apellidos" required class="bg-[#0a0f1a] border border-gray-800 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all" >
+        </div>
+
+        <div class="flex flex-col gap-2 md:col-span-1">
+          <label class="text-sm font-medium text-blue-400 ml-1">Número de cuenta</label>
+          <input type="number" name="cuenta" required class="bg-[#0a0f1a] border border-gray-800 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-all invalid:border-red-500/50"
+          pattern="[0-9]{9}">
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label class="text-sm font-medium text-blue-400 ml-1">Carrera</label>
+          <select name="carrera" class="bg-[#0a0f1a] border border-gray-800 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-all invalid:border-red-500/50">
+            <option value="computacion">Ingeniería en Computación</option>
+            <option value="civil">Ingeniería Civil</option>
+            <option value="industrial">Ingeniería Industrial</option>
+            <option value="mecanica">Ingeniería Mecánica</option>
+            <option value="mecanica">Ingeniería Eléctrica Electrónica</option>
+            <option value="mecanica">Derecho</option>
+            <option value="otra">Comunicación y Periodismo</option>
+            <option value="otra">Economía</option>
+            <option value="otra">Relaciones Internacionales</option>
+            <option value="otra">Planificación para el Desarrollo Agropecuario</option>
+            <option value="otra">Arquitectura</option>
+            <option value="otra">Diseño Insutrial</option>
+            <option value="otra">Pedagogía</option>
+          </select>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label class="text-sm font-medium text-blue-400 ml-1">Correo institucional</label>
+          <input type="email" name="correo_inst" required class="bg-[#0a0f1a] border border-gray-800 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-all invalid:border-red-500/50" 
+          pattern="^[a-zA-Z0-9._%+-]+@aragon\.unam\.mx$">
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label class="text-sm font-medium text-blue-400 ml-1">Correo personal</label>
+          <input type="email" name="correo_pers" required class="bg-[#0a0f1a] border border-gray-800 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-all invalid:border-red-500/50" 
+          pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$">
+        </div>
+
+        <div class="flex flex-col gap-2 md:col-span-2">
+          <label class="text-sm font-medium text-blue-400 ml-1">Número de contacto (WhatsApp)</label>
+          <input type="tel" name="contacto" required class="bg-[#0a0f1a] border border-gray-800 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-all invalid:border-red-500/50" 
+          pattern="^[0-9]{10}$">
+        </div>
+
+        <div class="md:col-span-2 mt-4">
+          <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-900/20 transition-all transform hover:scale-[1.01] active:scale-[0.98]">
+            Enviar Registro
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+</Layout>
