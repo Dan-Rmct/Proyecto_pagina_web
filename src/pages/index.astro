@@ -1,7 +1,8 @@
 ---
 import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
----
+import Calendario from "../components/Calendario.astro";
+---+---
 
 <Layout title="Hello World Club — Hackathon 2026">
 
@@ -206,7 +207,19 @@ import Layout from '../layouts/Layout.astro';
 
     </div>
   </section>
-
+  <section id="eventos-programados" class="relative bg-[#020617] pt-0 pb-20 border-t border-white/5 overflow-hidden"></section>  
+     <div class="text-center mb-16">
+        <h2 class="text-white text-4xl md:text-5xl font-bold tracking-tight">
+            Eventos programados
+        </h2>
+        <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
+            Explora nuestra agenda de actividades y no pierdas la oportunidad de participar.<br>
+            ¡Participa, aprende y concecta con la comunidad del club!
+        </p>
+    </div>
+    
+    <Calendario />
+</section>
 
   <!-- ═══════════════════════════════════════
        PROYECTOS
