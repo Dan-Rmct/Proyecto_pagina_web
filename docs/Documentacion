@@ -1,0 +1,44 @@
+# Documentación Técnica - Club Hello World (FES Aragón)
+
+Este documento detalla las especificaciones técnicas, decisiones de arquitectura y estrategias de desarrollo implementadas para la página del Club.
+
+## 1. Tecnologías Implementadas
+Para tener un rendimiento óptimo como se pedia aademas una experiencia de usuario moderna, utilizamos:
+
+* **Astro:**Este framework centrado en el rendimiento utiliza una arquitectura llamada "islas" para minimizar la carga de JavaScript en el cliente.
+* **Tailwind CSS:** Es el framework de diseño, basado en utilidades para un desarrollo ágil de interfaces responsivas y consistentes.
+* **pnpm:** Gestor de paquetes eficiente para optimizar el almacenamiento y la velocidad de instalación de dependencias.
+* **JavaScript (ES6+):** Utilizado para la interactividad del menú móvil y efectos de scroll.
+
+## 2. Arquitectura y Estructura del Proyecto
+En el proyecto usamos una estructura estándar basada en Astro, organizada para maximizar la reutilización de componentes:
+
+* **`src/layouts/Layout.astro`:** Plantilla base que define la estructura HTML5, metadatos y la importación de estilos globales.
+* **`src/components/`:** Contiene elementos modulares como el `Header.astro` (navegación), `CardEquipo.astro` (tarjetas dinámicas) y `Calendario.astro`  
+* **`src/pages/`:** Define las rutas del sitio:
+    * `index.astro`: Página de aterrizaje principal.
+    * `equipo.astro`: Presentación de la mesa directiva.
+    * `formulario.astro`: Sistema de registro para nuevos miembros.
+
+## 3. Decisiones Técnicas Relevantes
+
+      Se decidio usar astro principalmente por la facilidad que aporta al proyecto ademas de proporcionar un mejor rendimiento.
+      
+### Rendimiento y Optimización
+* **Carga Selectiva:** Se utiliza la hidratación de Astro solo donde es necesario para mantener un Score de Lighthouse elevado.
+* **Estilos Globales:** Se centralizaron las directivas de Tailwind en `global.css` para evitar redundancias.
+
+### Experiencia de Usuario (UI/UX)
+* **Diseño Mobile-First:** El componente `Header.astro` implementa un menú lateral (`mobile-menu`) desplegable mediante JavaScript para dispositivos móviles.
+* **Feedback Visual:** La navegación cambia de apariencia dinámicamente al hacer scroll para mejorar la legibilidad sobre fondos complejos.
+* **Componentización de Equipo:** Se diseñó `CardEquipo.astro` para recibir datos vía `props` (nombre, cargo, redes), permitiendo un diseño uniforme y fácil de actualizar.
+
+### Mecanismos de Crecimiento ("Growth")
+* **Validación Estudiantil:** El formulario de registro incluye una expresión regular (`pattern`) que restringe el acceso solo a correos institucionales `@aragon.unam.mx`, asegurando el enfoque en la comunidad de la FES Aragón.
+* **Call to Action (CTA):** Botones de "¡Únete ahora!" estratégicamente ubicados en el encabezado para maximizar la conversión de visitantes a miembros.
+
+## 4. Identidad Institucional
+El sitio ha sido diseñado alineándose con la **Misión** y **Visión** del club:
+* **Misión:** Impulsar la excelencia técnica mediante formación de equipos de alto rendimiento.
+* **Visión:** Ser el referente de talento tecnológico en la universidad.
+* **Objetivo:** Fomentar la interdisciplinariedad entre las ingenierías de la Facultad.
