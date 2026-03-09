@@ -119,9 +119,7 @@ const meses = [
     </div>
   </div>
 
-  <div class="relative flex items-center min-h-[650px] overflow-x-auto scrollbar-hide px-32 pt-50 pb-32">
-    
-    <div class="absolute top-1/2 left-0 w-[1000%] h-px bg-gray-800 -translate-y-1/2"></div>
+  <div class="relative flex items-center min-h-[800px] overflow-x-auto scrollbar-hide px-32 py-60 pb-20">  
 
       {meses.map((mes, idx) => {
         const esArriba = idx % 2 !== 0; 
@@ -155,6 +153,7 @@ const meses = [
                       id={`modal-${idx}-${evIdx}`}
                       class="absolute left-full ml-6 w-72 bg-[#111827]/95 backdrop-blur-xl border border-gray-700 p-6 rounded-[2.5rem] shadow-2xl opacity-0 pointer-events-none transition-all transform translate-x-4 z-50 info-cloud"
                     >
+
                       <h4 class="text-white font-bold text-lg mb-1">{ev.titulo}</h4>
                       <p class="text-cyan-400 text-[11px] font-semibold mb-1">🕒 {ev.hora} hrs</p>
                       <a href={ev.lugarUrl} target="_blank" class="text-gray-400 text-[10px] block mb-3 hover:text-white flex items-center gap-1">
@@ -213,4 +212,5 @@ const meses = [
 <style>
   .scrollbar-hide::-webkit-scrollbar { display: none; }
   .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
 </style>
