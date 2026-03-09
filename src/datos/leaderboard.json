@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "nombre": "Paola Ramírez",
+    "avatar": "avatarF.png", 
+    "puntos": 1080,
+    "detalles": "Ganadora Hackathon (500) + Cursos (300) + Mentorías (160) + Eventos (120)"
+  },
+  {
+    "id": 2,
+    "nombre": "Oscar Rivera",
+    "avatar": "avatarM.png",
+    "puntos": 980,
+    "detalles": "Participación Hackathon (250) + Cursos (400) + Proyectos (200)"
+  },
+  {
+    "id": 3,
+    "nombre": "Jesus Flores",
+    "avatar": "avatarM.png",
+    "puntos": 840,
+    "detalles": "Ganador Hackathon (500) + Cursos (200) + Mentorías (80) + Eventos (60)"
+  },
+  {
+    "id": 4,
+    "nombre": "Karla Martínez",
+    "avatar": "avatarF.png",
+    "puntos": 780,
+    "detalles": "Participación Hackathon (250) + Proyectos (200) + Curso (300) + Eventos (30)"
+  },
+  {
+    "id": 5,
+    "nombre": "Carlos Fuentes",
+    "avatar": "avatarM.png", 
+    "puntos": 540,
+    "detalles": "Cursos (300) + Mentoría (160) + Eventos (60)"
+  },
+  {
+    "id": 6,
+    "nombre": "Esteban Cortés",
+    "avatar": "avatarM.png",
+    "puntos": 290,
+    "detalles": "Cursos (200) + Eventos (90)"
+  },
+  {
+    "id": 7,
+    "nombre": "Fabiola Cruz",
+    "avatar": "avatarF.png",
+    "puntos": 250,
+    "detalles": "Participación Hackathon (250)"
+  }
+]

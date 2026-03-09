@@ -1,0 +1,104 @@
+---
+// Importar los datos estáticos que se crearon
+import leaderboardData from '../datos/leaderboard.json';
+
+// Cifra límite ficticia (como el 100% de la barra)
+const PUNTAJE_MAXIMO_DEMO = 1500;
+
+// Ordenar puntos (de mayor a menor) 
+const sortedData = leaderboardData.sort((a, b) => b.puntos - a.puntos);
+
+const top3 = sortedData.slice(0, 3);
+const resto = sortedData.slice(3);
+
+// Top 3 (colores y tamaños)
+const topStyles = [
+  { rank: 1, color: 'text-yellow-400', size: 'w-24 h-24' }, // Oro
+  { rank: 2, color: 'text-gray-300', size: 'w-20 h-20' },   // Plata
+  { rank: 3, color: 'text-orange-500', size: 'w-20 h-20' },  // Bronce
+];
+---
+
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-16 items-end max-w-5xl mx-auto px-2">
+      {top3.map((miembro, index) => {
+        const style = topStyles[index];
+        // Asignar una altura fija a las tarjetas
+        const cardHeight = index === 0 ? 'h-[420px]' : 'h-[380px]';
+        
+        return (
+          <div class={`bg-gray-900 rounded-3xl p-6 text-center border-2 border-gray-800 shadow-2xl transform transition hover:scale-105 relative ${cardHeight} ${index === 0 ? 'md:order-2 border-purple-800' : index === 1 ? 'md:order-1' : 'md:order-3'}`}>
+            
+            <div class={`absolute top-4 left-4 text-4xl font-black ${style.color}`}>
+              #{style.rank}
+            </div>
+
+            <div class="relative inline-block mt-8 mb-4">
+              <img 
+                src={miembro.avatar} 
+                alt={miembro.nombre} 
+                class="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover border-4 border-gray-700 mx-auto"
+                loading="lazy"
+              />
+            </div>
+            
+            <h3 class="text-xl font-bold mb-1 text-white leading-tight">{miembro.nombre}</h3>
+            
+            <div class="text-4xl font-extrabold text-purple-400 mb-2">
+              {miembro.puntos}
+            </div>
+            <p class="text-xs text-gray-500 uppercase tracking-widest mb-4">PUNTOS TOTALES</p>
+            
+            
+          {miembro.detalles && (
+            <div class="mt-6 border-t border-gray-800 pt-4 w-full">
+              <p class="text-[13px] text-gray-400 italic leading-relaxed px-4 whitespace-normal">
+                {miembro.detalles}
+              </p>
+            </div>
+          )}
+
+          </div>
+        )
+      })}
+    </div>
+
+   <div class="bg-gray-900 rounded-3xl p-8 md:p-10 border border-gray-800 shadow-lg max-w-5xl mx-auto">
+      <h3 class="text-2xl font-bold mb-10 text-gray-300">Más Miembros Activos</h3>
+      
+      <div class="space-y-8"> 
+        {resto.map((miembro, index) => {
+          const porcentaje = Math.min(100, (miembro.puntos / 1500) * 100);
+          
+          return (
+            <div class="grid grid-cols-[60px_1fr_130px] items-center gap-6 p-5 bg-gray-950 rounded-2xl hover:bg-gray-800/50 transition">
+              
+              <span class="text-3xl font-black text-gray-700 text-center">#{index + 4}</span>
+              
+              <div class="flex items-center gap-5">
+                <img src={miembro.avatar} alt={miembro.nombre} class="w-16 h-16 rounded-full object-cover border-2 border-gray-700" />
+                <div class="flex-1 min-w-0">
+                  <p class="text-lg font-semibold text-white mb-0.5">{miembro.nombre}</p>
+                  
+                  {miembro.detalles && (
+                    <p class="text-[11px] text-gray-500 italic mb-3 line-clamp-1 hover:line-clamp-none transition-all cursor-help">
+                      {miembro.detalles}
+                    </p>
+                  )}
+
+                  <div class="w-full bg-gray-700 rounded-full h-2 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 h-full bg-gradient-to-r from-purple-500 to-pink-500" style={`width: ${porcentaje}%`}></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="text-right">
+                <p class="text-3xl font-black text-purple-300">{miembro.puntos}</p>
+                <p class="text-[10px] text-gray-600">/ 1500 pts límite</p>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+
+  </div>
+</section>
