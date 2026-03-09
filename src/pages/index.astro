@@ -6,92 +6,91 @@ import Calendario from "../components/Calendario.astro";
 
 <Layout title="Hello World Club — Hackathon 2026">
 
-  <!-- ═══════════════════════════════════════
-       HERO
-  ═══════════════════════════════════════ -->
-  <section id="inicio" class="hero-section relative min-h-screen flex items-center justify-center overflow-hidden bg-[#020617]">
+  <!-- HERO -->
+  <section id="inicio" aria-label="Inicio" class="hero-section relative min-h-screen flex items-center justify-center overflow-hidden bg-[#020617]">
 
-    <!-- Grid de fondo animado -->
-    <div class="grid-bg absolute inset-0 opacity-20"></div>
+    <div class="grid-bg absolute inset-0 opacity-20" aria-hidden="true"></div>
+    <div class="orb orb-1 absolute w-96 h-96 rounded-full blur-[120px] opacity-30 bg-blue-600 -top-20 -left-20 pointer-events-none" aria-hidden="true"></div>
+    <div class="orb orb-2 absolute w-80 h-80 rounded-full blur-[100px] opacity-20 bg-purple-600 bottom-10 right-10 pointer-events-none" aria-hidden="true"></div>
 
-    <!-- Orbes de luz -->
-    <div class="orb orb-1 absolute w-96 h-96 rounded-full blur-[120px] opacity-30 bg-blue-600 -top-20 -left-20 pointer-events-none"></div>
-    <div class="orb orb-2 absolute w-80 h-80 rounded-full blur-[100px] opacity-20 bg-purple-600 bottom-10 right-10 pointer-events-none"></div>
+    <div class="relative z-10 text-center px-4 max-w-5xl mx-auto pt-28 pb-16">
 
-    <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
-
-      <!-- Pill badge -->
-      <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-8">
+      <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-8" aria-hidden="true">
         <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
         <span class="text-sm text-gray-300 font-mono">Hackathon 2026</span>
       </div>
 
-      <!-- Logo -->
       <div class="flex justify-center mb-6">
-        <img src="Logo-completo.png" alt="Hello World Club" class="h-20 md:h-28 drop-shadow-[0_0_30px_rgba(87,65,166,0.6)]" />
+        <img
+          src="Logo-completo.png"
+          alt="Hello World Club — logotipo"
+          width="320" height="100"
+          class="h-20 md:h-28 drop-shadow-[0_0_30px_rgba(87,65,166,0.6)]"
+          loading="eager"
+          fetchpriority="high"
+        />
       </div>
 
+      <!-- h1 es el único nivel 1 de la página -->
       <h1 class="hero-title text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight tracking-tight mb-6">
         Donde el código<br/>
         <span class="gradient-text">cobra vida.</span>
       </h1>
 
-      <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-        Somos el Club Hello World de la FES Aragón, UNAM. Construimos, aprendemos y colaboramos para llevar la tecnología y la competencia al siguiente nivel, de una forma multidisciplinaria.
+      <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+        Somos el <strong class="text-white">Club Hello World</strong> de la FES Aragón, UNAM. Construimos, aprendemos y colaboramos para llevar la tecnología y la competencia al siguiente nivel, de una forma multidisciplinaria.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="#formulario"
-           class="btn-primary px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold rounded-xl transition-all transform hover:scale-105 shadow-lg shadow-blue-900/30">
+           class="btn-primary px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold rounded-xl transition-all transform hover:scale-105 shadow-lg shadow-blue-900/30 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-[#020617]"
+           aria-label="Ir al formulario de registro">
           ¡Únete ahora! →
         </a>
         <a href="#nosotros"
-           class="px-8 py-4 border border-white/20 hover:border-white/40 text-white font-medium rounded-xl transition-all hover:bg-white/5">
+           class="px-8 py-4 border border-white/30 hover:border-white/60 text-white font-medium rounded-xl transition-all hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-white/40 focus:ring-offset-2 focus:ring-offset-[#020617]"
+           aria-label="Conocer más sobre el club">
           Conoce más
         </a>
       </div>
 
-      <!-- Stats -->
-      <div class="grid grid-cols-3 gap-6 mt-20 max-w-lg mx-auto">
+      <div class="grid grid-cols-3 gap-6 mt-20 max-w-lg mx-auto" aria-label="Estadísticas del club">
         <div class="text-center">
           <div class="text-3xl font-black text-white">2026</div>
-          <div class="text-xs text-gray-500 uppercase tracking-widest mt-1">Fundación</div>
+          <div class="text-xs text-gray-400 uppercase tracking-widest mt-1">Fundación</div>
         </div>
         <div class="text-center border-x border-white/10">
           <div class="text-3xl font-black text-white">2</div>
-          <div class="text-xs text-gray-500 uppercase tracking-widest mt-1">Hackathones</div>
+          <div class="text-xs text-gray-400 uppercase tracking-widest mt-1">Hackathones</div>
         </div>
         <div class="text-center">
           <div class="text-3xl font-black text-white"><span class="text-blue-400">+20</span></div>
-          <div class="text-xs text-gray-500 uppercase tracking-widest mt-1">Miembros</div>
+          <div class="text-xs text-gray-400 uppercase tracking-widest mt-1">Miembros</div>
         </div>
       </div>
 
     </div>
 
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-      <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce" aria-hidden="true">
+      <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
       </svg>
     </div>
-
   </section>
 
 
-  <!-- ═══════════════════════════════════════
-       NOSOTROS
-  ═══════════════════════════════════════ -->
-  <section id="nosotros" class="py-24 bg-[#020617] relative overflow-hidden">
+  <!-- NOSOTROS -->
+  <section id="nosotros" aria-labelledby="nosotros-titulo" class="py-24 bg-[#020617] relative overflow-hidden">
 
-    <div class="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-blue-900/10 to-transparent pointer-events-none"></div>
+    <div class="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-blue-900/10 to-transparent pointer-events-none" aria-hidden="true"></div>
 
     <div class="container mx-auto px-4 max-w-6xl relative z-10">
 
-      <div class="section-label text-center mb-4">
+      <div class="text-center mb-4">
         <span class="text-xs font-mono text-blue-400 uppercase tracking-[0.3em]">Nosotros</span>
       </div>
-      <h2 class="text-4xl md:text-5xl font-black text-white text-center mb-16">
+      <!-- h2: segundo nivel correcto después de h1 -->
+      <h2 id="nosotros-titulo" class="text-4xl md:text-5xl font-black text-white text-center mb-16">
         ¿Qué es Hello <span class="gradient-text">World</span>?
       </h2>
 
@@ -101,35 +100,35 @@ import Calendario from "../components/Calendario.astro";
           <p class="text-gray-300 text-lg leading-relaxed">
             <span class="text-white font-semibold">Hello World Club</span> es una comunidad estudiantil de la FES Aragón, UNAM, dedicada a impulsar el desarrollo tecnológico, crecimiento profesional, la programación y la innovación entre los universitarios.
           </p>
-          <p class="text-gray-400 leading-relaxed">
+          <p class="text-gray-300 leading-relaxed">
             Creemos que la tecnología es para todos. Sin importar tu carrera, si tienes curiosidad por resolver problemas con código o aplicando tus habilidades sociales y resolutivas a problemas reales, aquí tienes tu lugar.
           </p>
 
           <div class="grid grid-cols-2 gap-4 pt-4">
             <div class="feature-card bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-blue-500/40 transition-all">
-              <div class="text-2xl mb-2">💡</div>
-              <h4 class="text-white font-bold mb-1">Innovación</h4>
-              <p class="text-gray-500 text-sm">Ideas sin límites, proyectos reales.</p>
+              <div class="text-2xl mb-2" aria-hidden="true">💡</div>
+              <h3 class="text-white font-bold mb-1">Innovación</h3>
+              <p class="text-gray-400 text-sm">Ideas sin límites, proyectos reales.</p>
             </div>
             <div class="feature-card bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-purple-500/40 transition-all">
-              <div class="text-2xl mb-2">🤝</div>
-              <h4 class="text-white font-bold mb-1">Comunidad</h4>
-              <p class="text-gray-500 text-sm">Aprende y crece en equipo.</p>
+              <div class="text-2xl mb-2" aria-hidden="true">🤝</div>
+              <h3 class="text-white font-bold mb-1">Comunidad</h3>
+              <p class="text-gray-400 text-sm">Aprende y crece en equipo.</p>
             </div>
             <div class="feature-card bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-blue-500/40 transition-all">
-              <div class="text-2xl mb-2">🚀</div>
-              <h4 class="text-white font-bold mb-1">Proyectos</h4>
-              <p class="text-gray-500 text-sm">Del concepto a la realidad.</p>
+              <div class="text-2xl mb-2" aria-hidden="true">🚀</div>
+              <h3 class="text-white font-bold mb-1">Proyectos</h3>
+              <p class="text-gray-400 text-sm">Del concepto a la realidad.</p>
             </div>
             <div class="feature-card bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-purple-500/40 transition-all">
-              <div class="text-2xl mb-2">🏆</div>
-              <h4 class="text-white font-bold mb-1">Competencia</h4>
-              <p class="text-gray-500 text-sm">Hackathons y retos reales.</p>
+              <div class="text-2xl mb-2" aria-hidden="true">🏆</div>
+              <h3 class="text-white font-bold mb-1">Competencia</h3>
+              <p class="text-gray-400 text-sm">Hackathons y retos reales.</p>
             </div>
           </div>
         </div>
 
-        <div class="relative">
+        <div class="relative" aria-hidden="true">
           <div class="terminal bg-[#0d1117] border border-gray-800 rounded-2xl overflow-hidden shadow-2xl">
             <div class="terminal-bar flex items-center gap-2 px-4 py-3 border-b border-gray-800 bg-[#161b22]">
               <div class="w-3 h-3 rounded-full bg-red-500"></div>
@@ -146,7 +145,7 @@ import Calendario from "../components/Calendario.astro";
               <p class="pl-10"><span class="text-yellow-300">"innovación"</span><span class="text-white">,</span></p>
               <p class="pl-10"><span class="text-yellow-300">"hackathons"</span></p>
               <p class="pl-6"><span class="text-green-400">]</span></p>
-              <p class="pl-6 mt-2"><span class="text-pink-400">return</span> <span class="text-white">estudiante </span><span class="text-pink-400">+</span> <span class="text-white"> habilidades</span></p>
+              <p class="pl-6 mt-2"><span class="text-pink-400">return</span> <span class="text-white">estudiante </span><span class="text-pink-400">+</span><span class="text-white"> habilidades</span></p>
               <br/>
               <p><span class="text-blue-400">hello_world</span><span class="text-white">(</span><span class="text-yellow-300">"tú"</span><span class="text-white">)</span></p>
               <p class="text-green-400 animate-pulse">▌</p>
@@ -159,34 +158,31 @@ import Calendario from "../components/Calendario.astro";
   </section>
 
 
-  <!-- ═══════════════════════════════════════
-       HACKATHON / EVENTOS
-  ═══════════════════════════════════════ -->
-  <section id="eventos" class="py-24 bg-[#050b18] relative overflow-hidden">
+  <!-- HACKATHON / EVENTOS -->
+  <section id="eventos" aria-labelledby="eventos-titulo" class="py-24 bg-[#050b18] relative overflow-hidden">
 
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(87,65,166,0.15)_0%,_transparent_70%)] pointer-events-none"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(87,65,166,0.15)_0%,_transparent_70%)] pointer-events-none" aria-hidden="true"></div>
 
     <div class="container mx-auto px-4 max-w-6xl relative z-10">
 
       <div class="text-center mb-16">
         <span class="text-xs font-mono text-purple-400 uppercase tracking-[0.3em]">Eventos</span>
-        <h2 class="text-4xl md:text-5xl font-black text-white mt-3">
+        <h2 id="eventos-titulo" class="text-4xl md:text-5xl font-black text-white mt-3">
           Hackathon <span class="gradient-text">2026</span>
         </h2>
-        <p class="text-gray-400 mt-4 max-w-xl mx-auto">Primera edición del reto más grande del club. 48 horas para construir el futuro.</p>
+        <p class="text-gray-300 mt-4 max-w-xl mx-auto">Primera edición del reto más grande del club. 48 horas para construir el futuro.</p>
       </div>
 
-      <!-- Countdown placeholder -->
       <div class="hackathon-banner relative bg-gradient-to-r from-blue-900/30 to-purple-900/30 border border-blue-500/20 rounded-3xl p-10 md:p-14 mb-12 overflow-hidden text-center">
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djZoNnYtNmgtNnptMCAwdjZoNnYtNmgtNnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-50 pointer-events-none"></div>
+        <div class="absolute inset-0 opacity-50 pointer-events-none" aria-hidden="true"></div>
 
         <div class="relative z-10">
           <div class="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 rounded-full px-4 py-1.5 mb-6">
-            <span class="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></span>
+            <span class="w-2 h-2 bg-purple-400 rounded-full animate-pulse" aria-hidden="true"></span>
             <span class="text-purple-300 text-sm font-mono">Próximamente</span>
           </div>
           <h3 class="text-3xl md:text-4xl font-black text-white mb-4">¿Tienes lo que se necesita?</h3>
-          <p class="text-gray-400 max-w-2xl mx-auto mb-8">
+          <p class="text-gray-300 max-w-2xl mx-auto mb-8">
             Forma tu equipo, elige un reto y en 48 horas demuestra que tu solución puede cambiar algo. Abierto a todos los estudiantes de la FES Aragón.
           </p>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
@@ -197,7 +193,7 @@ import Calendario from "../components/Calendario.astro";
               { icon: "🏅", label: "Premios" },
             ].map(item => (
               <div class="bg-white/5 border border-white/10 rounded-xl p-4">
-                <div class="text-2xl mb-1">{item.icon}</div>
+                <div class="text-2xl mb-1" aria-hidden="true">{item.icon}</div>
                 <div class="text-white text-sm font-medium">{item.label}</div>
               </div>
             ))}
@@ -207,203 +203,162 @@ import Calendario from "../components/Calendario.astro";
 
     </div>
   </section>
-  <section id="eventos-programados" class="relative bg-[#020617] pt-0 pb-20 border-t border-white/5 overflow-hidden"></section>  
-     <div class="text-center mb-16">
-        <h2 class="text-white text-4xl md:text-5xl font-bold tracking-tight">
-            Eventos programados
-        </h2>
-        <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
-            Explora nuestra agenda de actividades y no pierdas la oportunidad de participar.<br>
-            ¡Participa, aprende y concecta con la comunidad del club!
-        </p>
-    </div>
-    
-    <Calendario />
-</section>
 
-  <!-- ═══════════════════════════════════════
-       PROYECTOS
-  ═══════════════════════════════════════ -->
-  <section id="proyectos" class="py-24 bg-[#020617]">
+  <!-- CALENDARIO -->
+  <section id="eventos-programados" aria-labelledby="calendario-titulo" class="relative bg-[#020617] pt-0 pb-20 border-t border-white/5 overflow-hidden">
+    <div class="text-center mb-16 pt-16">
+      <h2 id="calendario-titulo" class="text-white text-4xl md:text-5xl font-bold tracking-tight">
+        Eventos programados
+      </h2>
+      <p class="text-gray-300 mt-4 max-w-2xl mx-auto">
+        Explora nuestra agenda de actividades y no pierdas la oportunidad de participar.<br/>
+        ¡Participa, aprende y conecta con la comunidad del club!
+      </p>
+    </div>
+    <Calendario />
+  </section>
+
+
+  <!-- PROYECTOS -->
+  <section id="proyectos" aria-labelledby="proyectos-titulo" class="py-24 bg-[#020617]">
     <div class="container mx-auto px-4 max-w-6xl">
 
       <div class="text-center mb-16">
         <span class="text-xs font-mono text-blue-400 uppercase tracking-[0.3em]">Proyectos</span>
-        <h2 class="text-4xl md:text-5xl font-black text-white mt-3">
+        <h2 id="proyectos-titulo" class="text-4xl md:text-5xl font-black text-white mt-3">
           Lo que <span class="gradient-text">construimos</span>
         </h2>
-        <p class="text-gray-400 mt-4 max-w-xl mx-auto">Proyectos reales, con impacto real. Aquí algunos ejemplos del tipo de cosas que hacemos.</p>
+        <p class="text-gray-300 mt-4 max-w-xl mx-auto">Proyectos reales, con impacto real. Aquí algunos ejemplos del tipo de cosas que hacemos.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
         {[
-          {
-            tag: "Web",
-            title: "Página del Club",
-            desc: "Sitio oficial del Club Hello World construido con Astro + Tailwind por los propios miembros.",
-            color: "from-blue-500 to-cyan-500",
-            icon: "🌐"
-          },
-          {
-            tag: "App",
-            title: "Proyecto Hackathon",
-            desc: "El reto de la primera edición: construir una solución tecnológica en 48 horas.",
-            color: "from-purple-500 to-pink-500",
-            icon: "📱"
-          },
-          {
-            tag: "Open Source",
-            title: "Tu proyecto aquí",
-            desc: "Únete al club y tu próximo proyecto podría estar en esta lista.",
-            color: "from-orange-500 to-yellow-500",
-            icon: "✨"
-          }
+          { tag: "Web", title: "Página del Club", desc: "Sitio oficial del Club Hello World construido con Astro + Tailwind por los propios miembros.", color: "from-blue-500 to-cyan-500", icon: "🌐" },
+          { tag: "App", title: "Proyecto Hackathon", desc: "El reto de la primera edición: construir una solución tecnológica en 48 horas.", color: "from-purple-500 to-pink-500", icon: "📱" },
+          { tag: "Open Source", title: "Tu proyecto aquí", desc: "Únete al club y tu próximo proyecto podría estar en esta lista.", color: "from-orange-500 to-yellow-500", icon: "✨" },
         ].map(p => (
           <div class="project-card group bg-[#111827]/50 border border-gray-800 rounded-2xl overflow-hidden hover:border-gray-600 transition-all duration-500">
-            <div class={`h-2 bg-gradient-to-r ${p.color}`}></div>
+            <div class={`h-2 bg-gradient-to-r ${p.color}`} aria-hidden="true"></div>
             <div class="p-6">
               <div class="flex items-center justify-between mb-4">
-                <span class="text-2xl">{p.icon}</span>
-                <span class="text-xs font-mono text-gray-500 bg-white/5 border border-white/10 rounded-full px-3 py-1">{p.tag}</span>
+                <span class="text-2xl" aria-hidden="true">{p.icon}</span>
+                <span class="text-xs font-mono text-gray-400 bg-white/5 border border-white/10 rounded-full px-3 py-1">{p.tag}</span>
               </div>
               <h3 class="text-white font-bold text-lg mb-2 group-hover:text-blue-400 transition-colors">{p.title}</h3>
               <p class="text-gray-400 text-sm leading-relaxed">{p.desc}</p>
             </div>
           </div>
         ))}
-
       </div>
     </div>
   </section>
 
 
-  <!-- ═══════════════════════════════════════
-       EQUIPO
-  ═══════════════════════════════════════ -->
-  <section id="equipo" class="py-24 bg-[#050b18]">
+  <!-- EQUIPO -->
+  <section id="equipo" aria-labelledby="equipo-titulo" class="py-24 bg-[#050b18]">
     <div class="container mx-auto px-4 max-w-6xl">
 
       <div class="text-center mb-16">
         <span class="text-xs font-mono text-purple-400 uppercase tracking-[0.3em]">Equipo</span>
-        <h2 class="text-4xl md:text-5xl font-black text-white mt-3">
+        <h2 id="equipo-titulo" class="text-4xl md:text-5xl font-black text-white mt-3">
           Conoce a la <span class="gradient-text">mesa directiva</span>
         </h2>
-        <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
+        <p class="text-gray-300 mt-4 max-w-2xl mx-auto">
           El Club establece una mesa directiva conformada por representantes cuyo cargo responde a necesidades específicas de coordinación y planeación estratégica.
         </p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
         {[
-          {
-            nombre: "Ana Guadalupe Martinez Colón",
-            cargo: "Presidenta",
-            foto: "Presidenta.jpg",
-            linkedin: "https://www.linkedin.com/in/ana-mart%C3%ADnez-12359331a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-            github: "https://github.com/anagmc059",
-            color: "border-blue-500",
-            glow: "bg-blue-600"
-          },
-          {
-            nombre: "Jesús Sebastián Vázquez Zarco",
-            cargo: "Vice-Presidente",
-            foto: "Vicepresidente.jpg",
-            linkedin: "https://www.linkedin.com/in/jsebastianvz?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-            github: "https://github.com/itsebasvz",
-            color: "border-purple-500",
-            glow: "bg-purple-600"
-          },
-          {
-            nombre: "Enrique Emiliano Cano García",
-            cargo: "Secretario Técnico",
-            foto: "SecretarioTecnico.jpg",
-            linkedin: "http://www.linkedin.com/in/enrique-cano-garc%C3%ADa-2a3012227",
-            github: "https://github.com/kno4",
-            color: "border-blue-500",
-            glow: "bg-blue-600"
-          },
-          {
-            nombre: "Eric Leonardo Rosales Sánchez",
-            cargo: "Dir. de Estrategia y Planeación",
-            foto: "DirEstraPlan.jpg",
-            linkedin: "https://www.linkedin.com/in/eric-leonardo-rosales-sanchez-63a53b2a3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-            github: "https://github.com/ericroyale",
-            color: "border-purple-500",
-            glow: "bg-purple-600"
-          }
-        ].map(m => (
-          <div class="group bg-[#111827]/50 border border-gray-800 rounded-2xl p-6 text-center hover:border-blue-500/40 transition-all duration-500 relative overflow-hidden">
-            <div class={`absolute -top-20 -left-20 w-40 h-40 ${m.glow}/10 blur-[70px] group-hover:opacity-60 transition-opacity pointer-events-none`}></div>
-            <div class="relative w-24 h-24 mx-auto mb-4">
-              <img src={m.foto} alt={m.nombre} class={`rounded-full border-2 ${m.color} p-1 w-full h-full object-cover`} />
+          { nombre: "Ana Guadalupe Martinez Colón", cargo: "Presidenta", foto: "Presidenta.jpg", linkedin: "https://www.linkedin.com/in/ana-mart%C3%ADnez-12359331a", github: "https://github.com/anagmc059", ring: "#3b82f6", glow: "bg-blue-600" },
+          { nombre: "Jesús Sebastián Vázquez Zarco", cargo: "Vicepresidente", foto: "Vicepresidente.jpg", linkedin: "https://www.linkedin.com/in/jsebastianvz", github: "https://github.com/itsebasvz", ring: "#8b5cf6", glow: "bg-purple-600" },
+          { nombre: "Enrique Emiliano Cano García", cargo: "Secretario Técnico", foto: "SecretarioTecnico.jpg", linkedin: "http://www.linkedin.com/in/enrique-cano-garc%C3%ADa-2a3012227", github: "https://github.com/kno4", ring: "#3b82f6", glow: "bg-blue-600" },
+          { nombre: "Eric Leonardo Rosales Sánchez", cargo: "Dir. Estrategia y Planeación", foto: "DirEstraPlan.jpg", linkedin: "https://www.linkedin.com/in/eric-leonardo-rosales-sanchez-63a53b2a3", github: "https://github.com/ericroyale", ring: "#8b5cf6", glow: "bg-purple-600" },
+        ].map((m, i) => (
+          <article class="group bg-[#111827]/50 border border-gray-800 rounded-2xl p-6 text-center hover:border-blue-500/40 transition-all duration-500 relative overflow-hidden" aria-labelledby={`miembro-${i}`}>
+            <div class={`absolute -top-20 -left-20 w-40 h-40 ${m.glow}/10 blur-[70px] group-hover:opacity-60 transition-opacity pointer-events-none`} aria-hidden="true"></div>
+            <!-- Contenedor con padding de color = borde visible, overflow-hidden = círculo perfecto -->
+            <div class="mx-auto mb-4 rounded-full p-[3px] w-24 h-24 flex-shrink-0" style={`background: ${m.ring}; box-shadow: 0 0 18px ${m.ring}55`}>
+              <div class="w-full h-full rounded-full overflow-hidden bg-gray-900">
+                <img
+                  src={m.foto}
+                  alt={`Foto de ${m.nombre}`}
+                  width="96" height="96"
+                  class="w-full h-full object-cover object-top"
+                  loading="lazy"
+                />
+              </div>
             </div>
-            <h3 class="text-white font-bold text-base mb-1 leading-tight">{m.nombre}</h3>
-            <p class="text-gray-500 text-xs uppercase tracking-widest mb-4">{m.cargo}</p>
+            <h3 id={`miembro-${i}`} class="text-white font-bold text-base mb-1 leading-tight">{m.nombre}</h3>
+            <p class="text-gray-400 text-xs uppercase tracking-widest mb-4">{m.cargo}</p>
             <div class="flex justify-center gap-4">
-              {m.github && (
-                <a href={m.github} target="_blank" class="text-gray-500 hover:text-white transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                </a>
-              )}
-              {m.linkedin && (
-                <a href={m.linkedin} target="_blank" class="text-gray-500 hover:text-blue-400 transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                </a>
-              )}
+              <a href={m.github} target="_blank" rel="noopener noreferrer"
+                 class="text-gray-400 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white/40 rounded"
+                 aria-label={`GitHub de ${m.nombre}`}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              </a>
+              <a href={m.linkedin} target="_blank" rel="noopener noreferrer"
+                 class="text-gray-400 hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400/40 rounded"
+                 aria-label={`LinkedIn de ${m.nombre}`}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
             </div>
-          </div>
+          </article>
         ))}
-
       </div>
     </div>
   </section>
 
 
-  <!-- ═══════════════════════════════════════
-       CONTACTO / FORMULARIO
-  ═══════════════════════════════════════ -->
-  <section id="formulario" class="py-24 bg-[#020617]">
+  <!-- FORMULARIO -->
+  <section id="formulario" aria-labelledby="formulario-titulo" class="py-24 bg-[#020617]">
     <div class="container mx-auto px-4 max-w-3xl">
 
       <div class="text-center mb-12">
         <span class="text-xs font-mono text-blue-400 uppercase tracking-[0.3em]">Únete</span>
-        <h2 class="text-4xl md:text-5xl font-black text-white mt-3">
+        <h2 id="formulario-titulo" class="text-4xl md:text-5xl font-black text-white mt-3">
           Forma parte del <span class="gradient-text">club</span>
         </h2>
-        <p class="text-gray-400 mt-4">Completa tus datos para unirte a la comunidad Hello World</p>
+        <p class="text-gray-300 mt-4">Completa tus datos para unirte a la comunidad Hello World</p>
       </div>
 
       <div class="bg-[#111827]/50 border border-gray-800 p-8 md:p-12 rounded-3xl shadow-2xl backdrop-blur-sm">
-        <form action="#" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form action="#" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6" novalidate>
 
           <div class="flex flex-col gap-2">
-            <label class="text-sm font-medium text-blue-400 ml-1">Nombre(s)</label>
-            <input type="text" name="nombres" required
-              class="bg-[#0a0f1a] border border-gray-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder-gray-600"
+            <label for="nombres" class="text-sm font-medium text-blue-300 ml-1">
+              Nombre(s) <span class="text-red-400" aria-hidden="true">*</span>
+            </label>
+            <input id="nombres" type="text" name="nombres" required autocomplete="given-name"
+              class="bg-[#0a0f1a] border border-gray-600 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder-gray-500"
               placeholder="Tu nombre">
           </div>
 
           <div class="flex flex-col gap-2">
-            <label class="text-sm font-medium text-blue-400 ml-1">Apellidos</label>
-            <input type="text" name="apellidos" required
-              class="bg-[#0a0f1a] border border-gray-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder-gray-600"
+            <label for="apellidos" class="text-sm font-medium text-blue-300 ml-1">
+              Apellidos <span class="text-red-400" aria-hidden="true">*</span>
+            </label>
+            <input id="apellidos" type="text" name="apellidos" required autocomplete="family-name"
+              class="bg-[#0a0f1a] border border-gray-600 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder-gray-500"
               placeholder="Tus apellidos">
           </div>
 
           <div class="flex flex-col gap-2">
-            <label class="text-sm font-medium text-blue-400 ml-1">Número de cuenta</label>
-            <input type="number" name="cuenta" required
-              class="bg-[#0a0f1a] border border-gray-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-all placeholder-gray-600"
-              placeholder="000000000">
+            <label for="cuenta" class="text-sm font-medium text-blue-300 ml-1">
+              Número de cuenta <span class="text-red-400" aria-hidden="true">*</span>
+            </label>
+            <input id="cuenta" type="text" name="cuenta" required inputmode="numeric"
+              class="bg-[#0a0f1a] border border-gray-600 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-all placeholder-gray-500"
+              placeholder="000000000" pattern="[0-9]{9}">
           </div>
 
           <div class="flex flex-col gap-2">
-            <label class="text-sm font-medium text-blue-400 ml-1">Carrera</label>
-            <select name="carrera"
-              class="bg-[#0a0f1a] border border-gray-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-all">
-              <option value="">Selecciona tu carrera</option>
+            <label for="carrera" class="text-sm font-medium text-blue-300 ml-1">
+              Carrera <span class="text-red-400" aria-hidden="true">*</span>
+            </label>
+            <select id="carrera" name="carrera" required
+              class="bg-[#0a0f1a] border border-gray-600 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-all">
+              <option value="" disabled selected>Selecciona tu carrera</option>
               <option value="computacion">Ingeniería en Computación</option>
               <option value="civil">Ingeniería Civil</option>
               <option value="industrial">Ingeniería Industrial</option>
@@ -421,30 +376,35 @@ import Calendario from "../components/Calendario.astro";
           </div>
 
           <div class="flex flex-col gap-2">
-            <label class="text-sm font-medium text-blue-400 ml-1">Correo institucional</label>
-            <input type="email" name="correo_inst" required
-              class="bg-[#0a0f1a] border border-gray-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-all placeholder-gray-600"
+            <label for="correo_inst" class="text-sm font-medium text-blue-300 ml-1">
+              Correo institucional <span class="text-red-400" aria-hidden="true">*</span>
+            </label>
+            <input id="correo_inst" type="email" name="correo_inst" required autocomplete="email"
+              class="bg-[#0a0f1a] border border-gray-600 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-all placeholder-gray-500"
               placeholder="usuario@aragon.unam.mx">
           </div>
 
           <div class="flex flex-col gap-2">
-            <label class="text-sm font-medium text-blue-400 ml-1">Correo personal</label>
-            <input type="email" name="correo_pers" required
-              class="bg-[#0a0f1a] border border-gray-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-all placeholder-gray-600"
+            <label for="correo_pers" class="text-sm font-medium text-blue-300 ml-1">
+              Correo personal <span class="text-red-400" aria-hidden="true">*</span>
+            </label>
+            <input id="correo_pers" type="email" name="correo_pers" required autocomplete="email"
+              class="bg-[#0a0f1a] border border-gray-600 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-all placeholder-gray-500"
               placeholder="correo@ejemplo.com">
           </div>
 
           <div class="flex flex-col gap-2 md:col-span-2">
-            <label class="text-sm font-medium text-blue-400 ml-1">Número de contacto (WhatsApp)</label>
-            <input type="tel" name="contacto" required
-              class="bg-[#0a0f1a] border border-gray-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-all placeholder-gray-600"
-              placeholder="10 dígitos"
-              pattern="^[0-9]{10}$">
+            <label for="contacto" class="text-sm font-medium text-blue-300 ml-1">
+              Número de contacto (WhatsApp) <span class="text-red-400" aria-hidden="true">*</span>
+            </label>
+            <input id="contacto" type="tel" name="contacto" required autocomplete="tel" inputmode="numeric"
+              class="bg-[#0a0f1a] border border-gray-600 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-all placeholder-gray-500"
+              placeholder="10 dígitos" pattern="^[0-9]{10}$">
           </div>
 
           <div class="md:col-span-2 mt-2">
             <button type="submit"
-              class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-900/20 transition-all transform hover:scale-[1.01] active:scale-[0.98]">
+              class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-900/20 transition-all transform hover:scale-[1.01] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-[#020617]">
               Enviar Registro →
             </button>
           </div>
@@ -455,31 +415,31 @@ import Calendario from "../components/Calendario.astro";
   </section>
 
 
-  <!-- ═══════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════ -->
-  <footer class="bg-[#050b18] border-t border-gray-800 py-12">
+  <!-- FOOTER -->
+  <footer class="bg-[#050b18] border-t border-gray-800 py-12" role="contentinfo">
     <div class="container mx-auto px-4 max-w-6xl">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
 
         <div class="flex items-center gap-3">
-          <img src="Logo.png" alt="Hello World" class="h-10" />
+          <img src="Logo.png" alt="Hello World Club" width="40" height="40" class="h-10" loading="lazy" />
           <div>
-            <div class="text-white font-bold">Hello World Club</div>
-            <div class="text-gray-500 text-xs">FES Aragón · UNAM · 2026</div>
+            <p class="text-white font-bold">Hello World Club</p>
+            <p class="text-gray-400 text-xs">FES Aragón · UNAM · 2026</p>
           </div>
         </div>
 
-        <nav class="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-          <a href="#inicio" class="hover:text-white transition-colors">Inicio</a>
-          <a href="#nosotros" class="hover:text-white transition-colors">Nosotros</a>
-          <a href="#eventos" class="hover:text-white transition-colors">Eventos</a>
-          <a href="#proyectos" class="hover:text-white transition-colors">Proyectos</a>
-          <a href="#equipo" class="hover:text-white transition-colors">Equipo</a>
-          <a href="#formulario" class="hover:text-white transition-colors">Únete</a>
+        <nav aria-label="Navegación del pie de página">
+          <ul class="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
+            <li><a href="#inicio"             class="hover:text-white transition-colors focus:outline-none focus:underline">Inicio</a></li>
+            <li><a href="#nosotros"           class="hover:text-white transition-colors focus:outline-none focus:underline">Nosotros</a></li>
+            <li><a href="#eventos"            class="hover:text-white transition-colors focus:outline-none focus:underline">Eventos</a></li>
+            <li><a href="#proyectos"          class="hover:text-white transition-colors focus:outline-none focus:underline">Proyectos</a></li>
+            <li><a href="#equipo"             class="hover:text-white transition-colors focus:outline-none focus:underline">Equipo</a></li>
+            <li><a href="#formulario"         class="hover:text-white transition-colors focus:outline-none focus:underline">Únete</a></li>
+          </ul>
         </nav>
 
-        <div class="text-gray-600 text-xs text-center md:text-right">
+        <div class="text-gray-400 text-xs text-center md:text-right">
           <p>Si puedes imaginarlo puedes programarlo</p>
           <p class="mt-1">Hackathon 2026 · Primera Edición</p>
         </div>
@@ -492,48 +452,37 @@ import Calendario from "../components/Calendario.astro";
 
 
 <style>
-  /* ── Gradient text ── */
   .gradient-text {
     background: linear-gradient(135deg, #3b82f6, #8b5cf6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-
-  /* ── Grid bg ── */
   .grid-bg {
     background-image:
       linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
     background-size: 60px 60px;
   }
-
-  /* ── Orb float animation ── */
   .orb-1 { animation: float1 8s ease-in-out infinite; }
   .orb-2 { animation: float2 10s ease-in-out infinite; }
-
   @keyframes float1 {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(30px, 20px) scale(1.1); }
+    0%, 100% { transform: translate(0,0) scale(1); }
+    50%       { transform: translate(30px,20px) scale(1.1); }
   }
   @keyframes float2 {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(-20px, -30px) scale(1.05); }
+    0%, 100% { transform: translate(0,0) scale(1); }
+    50%       { transform: translate(-20px,-30px) scale(1.05); }
   }
-
-  /* ── Hero title fade-in ── */
   .hero-title {
     animation: fadeUp 0.8s ease both;
     animation-delay: 0.2s;
     opacity: 0;
   }
-
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-
-  /* ── Feature card hover ── */
   .feature-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }

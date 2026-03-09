@@ -4,9 +4,13 @@ import Header from '../components/Header.astro';
 
 interface Props {
   title?: string;
+  description?: string;
 }
 
-const { title = "Hello World Club" } = Astro.props;
+const {
+  title = "Hello World Club — FES Aragón UNAM",
+  description = "Club Hello World de la FES Aragón, UNAM. Formamos equipos de alto rendimiento para hackathons, talleres y proyectos tecnológicos. ¡Únete!"
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -15,21 +19,45 @@ const { title = "Hello World Club" } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="Club Hello World — FES Aragón, UNAM. Hackathon 2026." />
+
+    <!-- SEO -->
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Hello World Club — FES Aragón UNAM" />
+    <meta name="keywords" content="Hello World Club, FES Aragón, UNAM, hackathon, programación, tecnología, club universitario" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:site_name" content="Hello World Club" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
     <link rel="icon" type="image/x-icon" href="Logo-ICO.ico" />
     <title>{title}</title>
   </head>
   <body>
+    <!-- Skip to content: accesibilidad por teclado -->
+    <a href="#inicio" class="skip-link">Saltar al contenido principal</a>
+
     <Header />
-    <main>
+    <main id="main-content">
       <slot />
     </main>
   </body>
 </html>
 
 <style is:global>
+  *, *::before, *::after { box-sizing: border-box; }
+
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
 
   html, body {
@@ -37,11 +65,39 @@ const { title = "Hello World Club" } = Astro.props;
     width: 100%;
     min-height: 100%;
     background-color: #020617;
-    color: white;
-    font-family: system-ui, -apple-system, sans-serif;
+    color: #f9fafb;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
   }
 
-  /* Scrollbar personalizada */
+  /* Skip link accesibilidad */
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    background: #3b82f6;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+    font-weight: bold;
+    z-index: 9999;
+    text-decoration: none;
+    transition: top 0.2s;
+  }
+  .skip-link:focus { top: 0; }
+
+  /* Focus visible global */
+  :focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 3px;
+  }
+
+  /* Scroll offset para navbar fijo */
+  [id] { scroll-margin-top: 5rem; }
+
+  img { max-width: 100%; height: auto; }
+
+  /* Scrollbar */
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: #020617; }
   ::-webkit-scrollbar-thumb { background: #5741A6; border-radius: 3px; }
