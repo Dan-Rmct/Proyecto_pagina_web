@@ -34,7 +34,7 @@ desarrollada para la primera edición del Hackathon 2026.
 /
 ├── public/          # Imágenes y assets estáticos
 ├── src/
-│   ├── components/  # Componentes reutilizables (Header, Footer, CardEquipo)
+│   ├── components/  # Componentes reutilizables (Header, CardEquipo, etc.)
 │   ├── layouts/     # Layout base de la página
 │   ├── pages/       # Páginas del sitio
 │   └── styles/      # Estilos globales
