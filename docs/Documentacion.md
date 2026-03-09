@@ -5,7 +5,7 @@ Este documento detalla las especificaciones técnicas, decisiones de arquitectur
 ## 1. Tecnologías Implementadas
 Para tener un rendimiento óptimo como se pedia aademas una experiencia de usuario moderna, utilizamos tecnologias como:
 
-* **Astro v5:**Este framework centrado en el rendimiento utiliza una arquitectura llamada "islas" para minimizar la carga de JavaScript en el cliente.
+* **Astro v5:** Este framework centrado en el rendimiento utiliza una arquitectura llamada "islas" para minimizar la carga de JavaScript en el cliente.
 * **Tailwind CSS v4.2:** Es el framework de diseño, basado en utilidades para un desarrollo ágil de interfaces responsivas y consistentes.
 * **pnpm:** Gestor de paquetes eficiente para optimizar el almacenamiento y la velocidad de instalación de dependencias.
 * **JavaScript (ES6+):** Utilizado para la interactividad del menú móvil y efectos de scroll.
@@ -33,12 +33,12 @@ Se uso pnpm y no npm como gestor de paquetes por tres razones
 2.  **Velocidad:** Las instalaciones son significativamente más rápidas que en npm gracias a su estructura de enlaces simbólicos.
 3.  **Seguridad:** Garantiza que el código solo tenga acceso a las dependencias declaradas explícitamente en el `package.json`.
 
-* Formspree
+## Formspree
 Tambien se decidio crear un registro sin base de datos por cuestiones de tiempo y complejidad, sin embargo se utiliso una API llamada formspree;
 para cumplir con el objetivo de Crecimiento sin aumentar la complejidad del servidor y ahorrarnos tiempo, se implementó Formspree en el formulario de registro y ademas cuenta con una ventaja que
 permite recibir y gestionar las inscripciones directamente por correo electrónico.
 
-* Diseño
+## Diseño
 En cuestiones del diseño se decidio esa paleta de colores para reflejar la misión y visión de "Hello World" basada en el logo del equipo ademas de investigar su psicologia y match con los objetivos del proyecto.
 * **Fondo Oscuro (#020617):** Representa el entorno de una terminal de comandos y profundidad del conocimiento técnico. Psicológicamente transmite autoridad, profesionalismo y elegancia.
 * **Azul Tecnológico (Blue):** Utilizado en bordes y etiquetas para proyectar confianza, inteligencia y seguridad, valores para el club.
@@ -48,6 +48,25 @@ Tambien en el diseño se decidio agregar un calendario para facilitar al equipo 
 De igual manera se cuenta con la informacion de la mesa directiva del club donde se muestran linkeados sus cuentas de github y linkedin. 
 
 Se decidio que la pagina fuera todo en un one page por comodidad pero se puede navegar por ella de una forma intuitiva y facil, ademas de estar seccionada por si no se quiere scrollear.
+
+## Dificultades Técnicas y Soluciones
+
+1. Integración de Tailwind CSS v4.2 con Astro.
+Dificultad: Al utilizar la versión más reciente de Tailwind (v4.2), la integración estándar mediante el comando astro add tailwind no era compatible con la nueva arquitectura basada en el motor de alto rendimiento de Vite.
+Solución: Se implementó una configuración manual utilizando el plugin @tailwindcss/vite directamente en el archivo astro.config.mjs. Esto permitió aprovechar las nuevas directivas de estilo manteniendo la compatibilidad total con el pipeline de construcción de Astro.
+
+2. Validación de Identidad Universitaria.
+Dificultad: Asegurar a la comunidad de la FES Aragón, lo cual requería un filtro en el registro sin añadir fricción al usuario.
+Solución: Se diseñó e implementó una expresión específica en el atributo pattern del campo de correo institucional. Esta valida en el lado del cliente que el dominio sea @aragon.unam.mx.
+
+3. Gestión de Datos con Limitación de Infraestructura.
+Dificultad: Configurar y asegurar una base de datos completa para un registro de usuarios.
+Solución: Se optó por una arquitectura "Serverless-first" integrando la API de Formspree. Esto permitió gestionar el flujo de datos de los aspirantes de manera segura y directa a través de correo electrónico, eliminando la necesidad de un backend y permitiendo al equipo concentrarse en la interfaz de usuario.
+
+4. Interactividad y Adaptabilidad en Dispositivos Móviles.
+Dificultad: Lograr una navegación fluida en dispositivos móviles mientras se mantiene un diseño.
+Solución: Se desarrolló un sistema de navegación híbrido dentro de Header.astro. Se utilizó un script de manipulación de clases de CSS para alternar la visibilidad del menú móvil y se aplicaron efectos de difuminado (backdrop-blur) dinámicos mediante eventos de scroll para mejorar la legibilidad del contenido en pantallas pequeñas.
+
       
 ### Rendimiento y Optimización
 * **Carga Selectiva:** Se utilizo Astro solo donde es necesario para mantener un Score de Lighthouse elevado como se solicitaba.
@@ -67,3 +86,7 @@ El sitio ha sido diseñado alineándose con la **Misión** y **Visión** del clu
 * **Misión:** Impulsar la excelencia técnica mediante formación de equipos de alto rendimiento.
 * **Visión:** Ser el referente de talento tecnológico en la universidad.
 * **Objetivo:** Fomentar la interdisciplinariedad entre las ingenierías de la Facultad.
+
+## Rendimiento y Optimización
+
+![Reporte Lighthouse](./lighthouse-desktop.png)
