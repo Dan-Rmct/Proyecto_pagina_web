@@ -70,12 +70,12 @@ const topStyles = [
           const porcentaje = Math.min(100, (miembro.puntos / 1500) * 100);
           
           return (
-            <div class="grid grid-cols-[60px_1fr_130px] items-center gap-6 p-5 bg-gray-950 rounded-2xl hover:bg-gray-800/50 transition">
+            <div class="flex flex-col md:grid md:grid-cols-[60px_1fr_130px] items-center gap-4 md:gap-6 p-4 md:p-5 bg-gray-950 rounded-2xl hover:bg-gray-800/50 transition w-full">
               
               <span class="text-3xl font-black text-gray-700 text-center">#{index + 4}</span>
               
-              <div class="flex items-center gap-5">
-                <img src={miembro.avatar} alt={miembro.nombre} class="w-16 h-16 rounded-full object-cover border-2 border-gray-700" />
+              <div class="flex items-center gap-3 md:gap-5 w-full min-w-0">
+                <img src={miembro.avatar} alt={miembro.nombre} class="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover border-2 border-gray-700 shrink-0" />
                 <div class="flex-1 min-w-0">
                   <p class="text-lg font-semibold text-white mb-0.5">{miembro.nombre}</p>
                   
@@ -85,9 +85,11 @@ const topStyles = [
                     </p>
                   )}
 
-                  <div class="w-full bg-gray-700 rounded-full h-2 relative overflow-hidden">
+                  <div class="w-full mt-2 md:mt-0">
+                  <div class="w-full bg-gray-700 rounded-full h-1.5 md:h-2 relative overflow-hidden">
                     <div class="absolute top-0 left-0 h-full bg-gradient-to-r from-purple-500 to-pink-500" style={`width: ${porcentaje}%`}></div>
                   </div>
+                 </div>
                 </div>
               </div>
               
