@@ -33,12 +33,12 @@ Se uso pnpm y no npm como gestor de paquetes por tres razones
 2.  **Velocidad:** Las instalaciones son significativamente más rápidas que en npm gracias a su estructura de enlaces simbólicos.
 3.  **Seguridad:** Garantiza que el código solo tenga acceso a las dependencias declaradas explícitamente en el `package.json`.
 
-* **Formspree
+* Formspree
 Tambien se decidio crear un registro sin base de datos por cuestiones de tiempo y complejidad, sin embargo se utiliso una API llamada formspree;
 para cumplir con el objetivo de Crecimiento sin aumentar la complejidad del servidor y ahorrarnos tiempo, se implementó Formspree en el formulario de registro y ademas cuenta con una ventaja que
 permite recibir y gestionar las inscripciones directamente por correo electrónico.
 
-* **Diseño
+* Diseño
 En cuestiones del diseño se decidio esa paleta de colores para reflejar la misión y visión de "Hello World" basada en el logo del equipo ademas de investigar su psicologia y match con los objetivos del proyecto.
 * **Fondo Oscuro (#020617):** Representa el entorno de una terminal de comandos y profundidad del conocimiento técnico. Psicológicamente transmite autoridad, profesionalismo y elegancia.
 * **Azul Tecnológico (Blue):** Utilizado en bordes y etiquetas para proyectar confianza, inteligencia y seguridad, valores para el club.
