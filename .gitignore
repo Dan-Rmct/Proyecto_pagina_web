@@ -27,7 +27,7 @@ pnpm-debug.log*
 .astro/
 
 node_modules/
-dist/
+#dist/
 
 #vscode folder
 .vscode/
